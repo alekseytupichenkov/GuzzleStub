@@ -22,7 +22,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Alekseytupichenkov\\GuzzleStubBundle\\": ""
+            "Alekseytupichenkov\\GuzzleStubBundle\\": "src",
+            "Alekseytupichenkov\\GuzzleStubBundle\\Tests\\": "Tests"
         }
     }
 }

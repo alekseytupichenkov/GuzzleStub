@@ -4,6 +4,7 @@ namespace Alekseytupichenkov\GuzzleStubBundle\Handler;
 
 use Alekseytupichenkov\GuzzleStubBundle\Model\Fixture;
 use Alekseytupichenkov\GuzzleStubBundle\Exception\GuzzleStubException;
+use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Promise\RejectedPromise;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -12,7 +13,7 @@ class StubHandler
 {
     private $fixtures = [];
 
-    public function __invoke(RequestInterface $request, array $options)
+    public function __invoke(RequestInterface $request, array $options): PromiseInterface
     {
         $response = \GuzzleHttp\Promise\promise_for($this->getSuitableResponse($request));
 
@@ -57,7 +58,7 @@ class StubHandler
 
     private function isSuitableUri(RequestInterface $expectedRequest, RequestInterface $actualRequest): bool
     {
-        return $this->isSuitableString($expectedRequest->getUri()->getPath(), $actualRequest->getUri()->getPath());
+        return $this->isSuitableString(urldecode($expectedRequest->getUri()->__toString()), $actualRequest->getUri()->__toString());
     }
 
     private function isSuitableBody(RequestInterface $expectedRequest, RequestInterface $actualRequest): bool
