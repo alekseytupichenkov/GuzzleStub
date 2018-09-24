@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Alekseytupichenkov\GuzzleStubBundle\Tests\Fixtures\Stub;
+namespace Alekseytupichenkov\GuzzleStubBundle\Tests\Functional\Stub;
 
 use Alekseytupichenkov\GuzzleStubBundle\Model\Fixture;
-use Alekseytupichenkov\GuzzleStubBundle\Tests\Fixtures\Client\TestClient;
+use Alekseytupichenkov\GuzzleStubBundle\Tests\Functional\Client\TestClient;
 use Alekseytupichenkov\GuzzleStubBundle\Traits\GuzzleClientTrait;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;

@@ -58,7 +58,7 @@ class StubHandler
 
     private function isSuitableUri(RequestInterface $expectedRequest, RequestInterface $actualRequest): bool
     {
-        return $this->isSuitableString(urldecode($expectedRequest->getUri()->__toString()), $actualRequest->getUri()->__toString());
+        return $this->isSuitableString(urldecode($expectedRequest->getUri()->__toString()), urldecode($actualRequest->getUri()->__toString()));
     }
 
     private function isSuitableBody(RequestInterface $expectedRequest, RequestInterface $actualRequest): bool

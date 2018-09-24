@@ -1,6 +1,6 @@
 <?php
 
-namespace Liip\FunctionalTestBundle;
+namespace Alekseytupichenkov\GuzzleStubBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

@@ -96,7 +96,7 @@ class StubHandlerTest extends TestCase
         $this->assertEquals($response, $promise->wait());
     }
 
-    public function testFixturesStackOrder()
+    public function testReplaceResponseByExistingRequest()
     {
         $response = new Response(200);
         $this->handler->append(new Fixture($this->getRequest, $response));
@@ -104,7 +104,6 @@ class StubHandlerTest extends TestCase
         $promise = $this->handler->__invoke($this->getRequest, []);
 
         $this->assertEquals($response, $promise->wait());
-
     }
 
     /**

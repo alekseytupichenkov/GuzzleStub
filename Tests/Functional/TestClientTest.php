@@ -1,8 +1,8 @@
 <?php
 
-namespace Alekseytupichenkov\GuzzleStubBundle\Tests;
+namespace Alekseytupichenkov\GuzzleStubBundle\Tests\Functional;
 
-use Alekseytupichenkov\GuzzleStubBundle\Tests\Fixtures\Stub\TestClientStub;
+use Alekseytupichenkov\GuzzleStubBundle\Tests\Functional\Stub\TestClientStub;
 use PHPUnit\Framework\TestCase;
 
 class StubHandlerTest extends TestCase
@@ -43,5 +43,14 @@ class StubHandlerTest extends TestCase
         $this->assertEquals('{"result":"error"}', $response->getBody()->__toString());
         $this->assertEquals(1, $this->client->getHistoryCount());
         $this->assertEquals($response, $this->client->getLatestHistoryResponse());
+    }
+
+    /**
+     * @expectedException \Alekseytupichenkov\GuzzleStubBundle\Exception\GuzzleStubException
+     * @expectedExceptionMessageRegExp "Can't find suitable response for request .*"
+     */
+    public function testException()
+    {
+        $this->client->post('/without/fixture');
     }
 }
