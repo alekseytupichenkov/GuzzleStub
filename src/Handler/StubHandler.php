@@ -18,10 +18,10 @@ class StubHandler
         $response = \GuzzleHttp\Promise\promise_for($this->getSuitableResponse($request));
 
         return $response->then(
-            function($value) use ($request, $options) {
+            function($value) {
                 return $value;
             },
-            function($reason) use ($request, $options) {
+            function($reason) {
                 return new RejectedPromise($reason);
             }
         );
