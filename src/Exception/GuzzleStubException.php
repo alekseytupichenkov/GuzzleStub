@@ -12,7 +12,7 @@ class GuzzleStubException extends \Exception
     {
         $data = [
             'method' => $request->getMethod(),
-            'uri' => $request->getUri()->getPath(),
+            'uri' => $request->getUri()->__toString(),
             'body' => $request->getBody()->__toString(),
         ];
 

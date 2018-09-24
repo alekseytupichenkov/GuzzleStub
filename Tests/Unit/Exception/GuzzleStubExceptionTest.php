@@ -12,7 +12,7 @@ class GuzzleStubExceptionTest extends TestCase
 {
     public function testResponseNotFound()
     {
-        $request = new Request('POST', '/foo/bar', [
+        $request = new Request('POST', 'http://foo.bar/baz', [
             'foo' => 'bar',
             'baz' => 1,
         ], 'SuperBody');
@@ -21,11 +21,15 @@ class GuzzleStubExceptionTest extends TestCase
 
         $this->assertEquals("Can't find suitable response for request [array (
   'method' => 'POST',
-  'uri' => '/foo/bar',
+  'uri' => 'http://foo.bar/baz',
   'body' => 'SuperBody',
   'protocol_version' => '1.1',
   'headers' => 
   array (
+    'Host' => 
+    array (
+      0 => 'foo.bar',
+    ),
     'foo' => 
     array (
       0 => 'bar',
