@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Alekseytupichenkov\GuzzleStubBundle\Traits;
+namespace Alekseytupichenkov\GuzzleStub\Traits;
 
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alekseytupichenkov\GuzzleStubBundle\Model\Fixture;
-use Alekseytupichenkov\GuzzleStubBundle\Handler\StubHandler;
+use Alekseytupichenkov\GuzzleStub\Model\Fixture;
+use Alekseytupichenkov\GuzzleStub\Handler\StubHandler;
 
 trait GuzzleClientTrait
 {

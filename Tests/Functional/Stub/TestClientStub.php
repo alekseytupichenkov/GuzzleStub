@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Alekseytupichenkov\GuzzleStubBundle\Tests\Functional\Stub;
+namespace Alekseytupichenkov\GuzzleStub\Tests\Functional\Stub;
 
-use Alekseytupichenkov\GuzzleStubBundle\Model\Fixture;
-use Alekseytupichenkov\GuzzleStubBundle\Tests\Functional\Client\TestClient;
-use Alekseytupichenkov\GuzzleStubBundle\Traits\GuzzleClientTrait;
+use Alekseytupichenkov\GuzzleStub\Model\Fixture;
+use Alekseytupichenkov\GuzzleStub\Tests\Functional\Client\TestClient;
+use Alekseytupichenkov\GuzzleStub\Traits\GuzzleClientTrait;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Alekseytupichenkov\GuzzleStubBundle\Tests\Unit\Exception;
+namespace Alekseytupichenkov\GuzzleStub\Tests\Unit\Exception;
 
-use Alekseytupichenkov\GuzzleStubBundle\Exception\GuzzleStubException;
+use Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException;
 use GuzzleHttp\Psr7\Request;
 use PHPUnit\Framework\TestCase;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Alekseytupichenkov\GuzzleStubBundle\Tests\Unit\Handler;
+namespace Alekseytupichenkov\GuzzleStub\Tests\Unit\Handler;
 
-use Alekseytupichenkov\GuzzleStubBundle\Handler\StubHandler;
-use Alekseytupichenkov\GuzzleStubBundle\Model\Fixture;
+use Alekseytupichenkov\GuzzleStub\Handler\StubHandler;
+use Alekseytupichenkov\GuzzleStub\Model\Fixture;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
@@ -107,7 +107,7 @@ class StubHandlerTest extends TestCase
     }
 
     /**
-     * @expectedException \Alekseytupichenkov\GuzzleStubBundle\Exception\GuzzleStubException
+     * @expectedException \Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException
      * @expectedExceptionMessageRegExp "Can't find suitable response for request .*"
      */
     public function testException()

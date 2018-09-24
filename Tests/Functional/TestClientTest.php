@@ -1,8 +1,8 @@
 <?php
 
-namespace Alekseytupichenkov\GuzzleStubBundle\Tests\Functional;
+namespace Alekseytupichenkov\GuzzleStub\Tests\Functional;
 
-use Alekseytupichenkov\GuzzleStubBundle\Tests\Functional\Stub\TestClientStub;
+use Alekseytupichenkov\GuzzleStub\Tests\Functional\Stub\TestClientStub;
 use PHPUnit\Framework\TestCase;
 
 class StubHandlerTest extends TestCase
@@ -46,7 +46,7 @@ class StubHandlerTest extends TestCase
     }
 
     /**
-     * @expectedException \Alekseytupichenkov\GuzzleStubBundle\Exception\GuzzleStubException
+     * @expectedException \Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException
      * @expectedExceptionMessageRegExp "Can't find suitable response for request .*"
      */
     public function testException()

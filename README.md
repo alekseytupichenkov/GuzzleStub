@@ -1,4 +1,4 @@
-# GuzzleStubBundle
+# GuzzleStub
 
 Table of contents:
 
@@ -8,17 +8,17 @@ Table of contents:
 Introduction
 ============
 
-This bundles provides guzzle stubs.
+This repository provides guzzle stubs with flexible fixtures.
 
 Installation
 ------------
 
- 1. Download the Bundle
+ 1. Download
 
     Run command in console
 
     ```bash
-    $ composer require --dev alekseytupichenkov/guzzle_stub_bundle
+    $ composer require --dev alekseytupichenkov/guzzle_stub
     ```
 
 Basic usage
@@ -47,8 +47,8 @@ class MySuperGuzzleClient extends Client
 
 Create Guzzle client stub class using existing guzzle client, add trait GuzzleClientTrait, implement method `loadFixtures` and add fixtures to it
 ```php
-use Alekseytupichenkov\GuzzleStubBundle\Model\Fixture;
-use Alekseytupichenkov\GuzzleStubBundle\Traits\GuzzleClientTrait;
+use Alekseytupichenkov\GuzzleStub\Model\Fixture;
+use Alekseytupichenkov\GuzzleStub\Traits\GuzzleClientTrait;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 
@@ -105,7 +105,7 @@ class MySuperGuzzleClientStubTest extends TestCase
 If stub haven't sutible fixture, you'll get exception like this
 ```php
 1) MySuperGuzzleClientStubTest::testException
-Alekseytupichenkov\GuzzleStubBundle\Exception\GuzzleStubException: Can't find suitable response for request [array (
+Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException: Can't find suitable response for request [array (
   'method' => 'POST',
   'uri' => '/without/fixture',
   'body' => '',

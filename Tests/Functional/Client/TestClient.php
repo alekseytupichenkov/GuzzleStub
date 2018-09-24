@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Alekseytupichenkov\GuzzleStubBundle\Tests\Functional\Client;
+namespace Alekseytupichenkov\GuzzleStub\Tests\Functional\Client;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Alekseytupichenkov\GuzzleStubBundle\Exception;
+namespace Alekseytupichenkov\GuzzleStub\Exception;
 
 use Psr\Http\Message\RequestInterface;
 

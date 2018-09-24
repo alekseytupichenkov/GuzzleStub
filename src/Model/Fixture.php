@@ -1,6 +1,6 @@
 <?php
 
-namespace Alekseytupichenkov\GuzzleStubBundle\Model;
+namespace Alekseytupichenkov\GuzzleStub\Model;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;

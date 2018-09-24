@@ -1,9 +1,9 @@
 <?php
 
-namespace Alekseytupichenkov\GuzzleStubBundle\Handler;
+namespace Alekseytupichenkov\GuzzleStub\Handler;
 
-use Alekseytupichenkov\GuzzleStubBundle\Model\Fixture;
-use Alekseytupichenkov\GuzzleStubBundle\Exception\GuzzleStubException;
+use Alekseytupichenkov\GuzzleStub\Model\Fixture;
+use Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Promise\RejectedPromise;
 use Psr\Http\Message\RequestInterface;
