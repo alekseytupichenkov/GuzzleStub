@@ -5,7 +5,6 @@ namespace Alekseytupichenkov\GuzzleStub\Handler;
 use Alekseytupichenkov\GuzzleStub\Model\Fixture;
 use Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException;
 use GuzzleHttp\Promise\PromiseInterface;
-use GuzzleHttp\Promise\RejectedPromise;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -20,9 +19,6 @@ class StubHandler
         return $response->then(
             function($value) {
                 return $value;
-            },
-            function($reason) {
-                return new RejectedPromise($reason);
             }
         );
     }
