@@ -14,7 +14,7 @@ class TestClientStub extends TestClient
 {
     use GuzzleClientTrait;
 
-    function loadFixtures()
+    public function loadFixtures()
     {
         $this->append(new Fixture(
             new Request('POST', 'http://foo.bar/foo/bar', [

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Alekseytupichenkov\GuzzleStub\Traits;
 
+use Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Psr\Http\Message\RequestInterface;
@@ -66,12 +67,12 @@ trait GuzzleClientTrait
     }
 
     /**
-     * @throws \Exception
+     * @throws GuzzleStubException
      */
     public function getHistory(int $index): array
     {
         if (!$this->hasHistory($index)) {
-            throw new \Exception(sprintf('Can`t found history with index %d', $index));
+            throw GuzzleStubException::cantFoundHistoryWithIndex($index);
         }
 
         return $this->history[$index];

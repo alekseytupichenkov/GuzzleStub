@@ -108,7 +108,7 @@ class StubHandlerTest extends TestCase
 
     /**
      * @expectedException \Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException
-     * @expectedExceptionMessageRegExp "Can't find suitable response for request .*"
+     * @expectedExceptionMessageRegExp "Can`t find suitable response for request .*"
      */
     public function testException()
     {

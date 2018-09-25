@@ -24,6 +24,11 @@ class GuzzleStubException extends \Exception
             $data['headers'] = $request->getHeaders();
         }
 
-        return new self(sprintf('Can\'t find suitable response for request [%s]', var_export($data, true)));
+        return new self(sprintf('Can`t find suitable response for request [%s]', var_export($data, true)));
+    }
+
+    public static function cantFoundHistoryWithIndex(int $index): self
+    {
+        return new self(sprintf('Can`t found history with index %d', $index));
     }
 }

@@ -19,7 +19,7 @@ class GuzzleStubExceptionTest extends TestCase
 
         $e = GuzzleStubException::responseNotFound($request);
 
-        $this->assertEquals("Can't find suitable response for request [array (
+        $this->assertEquals("Can`t find suitable response for request [array (
   'method' => 'POST',
   'uri' => 'http://foo.bar/baz',
   'body' => 'SuperBody',
@@ -40,5 +40,12 @@ class GuzzleStubExceptionTest extends TestCase
     ),
   ),
 )]", $e->getMessage());
+    }
+
+    public function testCantFoundHistoryWithIndex()
+    {
+        $e = GuzzleStubException::cantFoundHistoryWithIndex(1);
+
+        $this->assertEquals('Can`t found history with index 1', $e->getMessage());
     }
 }
