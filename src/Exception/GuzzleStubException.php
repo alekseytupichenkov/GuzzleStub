@@ -12,8 +12,8 @@ class GuzzleStubException extends \Exception
     {
         $data = [
             'method' => $request->getMethod(),
-            'uri' => $request->getUri()->__toString(),
-            'body' => $request->getBody()->__toString(),
+            'uri'    => $request->getUri()->__toString(),
+            'body'   => $request->getBody()->__toString(),
         ];
 
         if (!empty($request->getProtocolVersion())) {
