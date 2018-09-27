@@ -3,9 +3,9 @@
 namespace Alekseytupichenkov\GuzzleStub\Tests\Unit\Model;
 
 use Alekseytupichenkov\GuzzleStub\Model\Fixture;
-use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 
 class FixtureTest extends TestCase
 {

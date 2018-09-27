@@ -5,7 +5,7 @@ namespace Alekseytupichenkov\GuzzleStub\Tests\Functional;
 use Alekseytupichenkov\GuzzleStub\Tests\Functional\Stub\TestClientStub;
 use PHPUnit\Framework\TestCase;
 
-class StubHandlerTest extends TestCase
+class TestClientTest extends TestCase
 {
     /** @var TestClientStub */
     private $client;
@@ -19,9 +19,9 @@ class StubHandlerTest extends TestCase
     {
         $response = $this->client->post('/foo/bar', [
             'headers' => [
-                'token' => '123'
+                'token' => '123',
             ],
-            'body' => '{"data":"test"}'
+            'body' => '{"data":"test"}',
         ]);
 
         $this->assertEquals(200, $response->getStatusCode());
@@ -34,9 +34,9 @@ class StubHandlerTest extends TestCase
     {
         $response = $this->client->post('/foo/baz', [
             'headers' => [
-                'token' => '123'
+                'token' => '123',
             ],
-            'body' => '{"data":"test"}'
+            'body' => '{"data":"test"}',
         ]);
 
         $this->assertEquals(200, $response->getStatusCode());
@@ -58,9 +58,9 @@ class StubHandlerTest extends TestCase
     {
         $this->client->post('/foo/bar', [
             'headers' => [
-                'token' => '123'
+                'token' => '123',
             ],
-            'body' => '{"data":"test"}'
+            'body' => '{"data":"test"}',
         ]);
 
         $history = $this->client->getHistoryList();
@@ -75,9 +75,9 @@ class StubHandlerTest extends TestCase
     {
         $this->client->post('/foo/bar', [
             'headers' => [
-                'token' => '123'
+                'token' => '123',
             ],
-            'body' => '{"data":"test"}'
+            'body' => '{"data":"test"}',
         ]);
 
         $history = $this->client->getHistory(0);

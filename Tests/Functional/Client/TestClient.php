@@ -12,9 +12,9 @@ class TestClient extends Client
     public function __construct(HandlerStack $handlerStack = null)
     {
         parent::__construct([
-            'timeout' => 300,
+            'timeout'  => 300,
             'base_uri' => 'http://foo.bar',
-            'handler' => $handlerStack ?? HandlerStack::create(),
+            'handler'  => $handlerStack ?? HandlerStack::create(),
         ]);
     }
 }

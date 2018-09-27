@@ -2,8 +2,8 @@
 
 namespace Alekseytupichenkov\GuzzleStub\Handler;
 
-use Alekseytupichenkov\GuzzleStub\Model\Fixture;
 use Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException;
+use Alekseytupichenkov\GuzzleStub\Model\Fixture;
 use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -17,7 +17,7 @@ class StubHandler
         $response = \GuzzleHttp\Promise\promise_for($this->getSuitableResponse($request));
 
         return $response->then(
-            function($value) {
+            function ($value) {
                 return $value;
             }
         );
@@ -93,6 +93,6 @@ class StubHandler
 
     private function isSuitableString(string $expected, string $actual): bool
     {
-        return 0 === strcasecmp($expected, $actual) || @preg_match('/^' . $expected . '$/i', $actual);
+        return 0 === strcasecmp($expected, $actual) || @preg_match('/^'.$expected.'$/i', $actual);
     }
 }

@@ -18,14 +18,14 @@ class TestClientStub extends TestClient
     {
         $this->append(new Fixture(
             new Request('POST', 'http://foo.bar/foo/bar', [
-                'token' => '.*'
+                'token' => '.*',
             ], '{"data":".*"}'),
             new Response(200, [], '{"result":"ok"}')
         ));
 
         $this->append(new Fixture(
             new Request('POST', 'http://foo.bar/foo/baz', [
-                'token' => '.*'
+                'token' => '.*',
             ], '{"data":".*"}'),
             new Response(200, [], '{"result":"error"}')
         ));

@@ -10,7 +10,8 @@ class Fixture
     private $request;
     private $response;
 
-    public function __construct(RequestInterface $request, ResponseInterface $response) {
+    public function __construct(RequestInterface $request, ResponseInterface $response)
+    {
         $this->request = $request;
         $this->response = $response;
     }

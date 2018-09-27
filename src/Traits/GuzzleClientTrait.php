@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Alekseytupichenkov\GuzzleStub\Traits;
 
 use Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException;
+use Alekseytupichenkov\GuzzleStub\Handler\StubHandler;
+use Alekseytupichenkov\GuzzleStub\Model\Fixture;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alekseytupichenkov\GuzzleStub\Model\Fixture;
-use Alekseytupichenkov\GuzzleStub\Handler\StubHandler;
 
 trait GuzzleClientTrait
 {
@@ -33,7 +33,7 @@ trait GuzzleClientTrait
     }
 
     /**
-     * Append fixture
+     * Append fixture.
      *
      * @param Fixture $fixture
      *
@@ -45,7 +45,6 @@ trait GuzzleClientTrait
 
         return $this;
     }
-
 
     abstract public function getConfig($option = null);
 
