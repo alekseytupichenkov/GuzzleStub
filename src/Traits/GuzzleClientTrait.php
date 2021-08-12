@@ -14,7 +14,7 @@ use Psr\Http\Message\ResponseInterface;
 
 trait GuzzleClientTrait
 {
-    /** @var HandlerStack */co
+    /** @var HandlerStack */
     private $handlerStack;
     private $stubHandler;
     private $history = [];
