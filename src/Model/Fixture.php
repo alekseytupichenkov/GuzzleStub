@@ -7,13 +7,8 @@ use Psr\Http\Message\ResponseInterface;
 
 class Fixture
 {
-    private $request;
-    private $response;
-
-    public function __construct(RequestInterface $request, ResponseInterface $response)
+    public function __construct(private RequestInterface $request, private ResponseInterface $response)
     {
-        $this->request = $request;
-        $this->response = $response;
     }
 
     public function getRequest(): RequestInterface

@@ -3,19 +3,17 @@ language: php
 sudo: false
 
 php:
-  - 7.0
-  - 7.1
-  - 7.2
+  - 8.0
 
 before_script:
   - composer self-update
   - composer install
-  - if [[ $(phpenv version-name) =~ ^7.(1|2) ]] ; then test -f $HOME/.composer/cache/phpstan.phar || wget https://github.com/phpstan/phpstan/releases/download/0.10.3/phpstan.phar -O $HOME/.composer/cache/phpstan.phar; fi
+  - test -f $HOME/.composer/cache/phpstan.phar || wget https://github.com/phpstan/phpstan/releases/download/0.12.94/phpstan.phar -O $HOME/.composer/cache/phpstan.phar
 
 script:
   - composer travis
-  - if [[ $(phpenv version-name) =~ ^7.(1|2) ]] ; then php $HOME/.composer/cache/phpstan.phar analyze -l 7 ./src; fi
+  - php $HOME/.composer/cache/phpstan.phar analyze -l 7 ./src
 
 after_success:
- - wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.1.0/php-coveralls.phar -O coveralls.phar
+ - wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.4.3/php-coveralls.phar -O coveralls.phar
  - php coveralls.phar -v

@@ -4,17 +4,22 @@ namespace Alekseytupichenkov\GuzzleStub\Handler;
 
 use Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException;
 use Alekseytupichenkov\GuzzleStub\Model\Fixture;
+use GuzzleHttp\Promise\Create;
 use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 class StubHandler
 {
-    private $fixtures = [];
+    /** @var Fixture[] */
+    private array $fixtures = [];
 
+    /**
+     * @param mixed[] $options
+     */
     public function __invoke(RequestInterface $request, array $options): PromiseInterface
     {
-        $response = \GuzzleHttp\Promise\promise_for($this->getSuitableResponse($request));
+        $response = Create::promiseFor($this->getSuitableResponse($request));
 
         return $response->then(
             function ($value) {
@@ -23,7 +28,7 @@ class StubHandler
         );
     }
 
-    public function append(Fixture $fixture)
+    public function append(Fixture $fixture): void
     {
         $this->fixtures[] = $fixture;
     }
@@ -67,7 +72,13 @@ class StubHandler
         return empty($this->array_diff_recursive($expectedRequest->getHeaders(), $actualRequest->getHeaders()));
     }
 
-    private function array_diff_recursive($a, $b)
+    /**
+     * @param mixed[] $a
+     * @param mixed[] $b
+     *
+     * @return string[][]
+     */
+    private function array_diff_recursive(array $a, array $b): array
     {
         $result = [];
 

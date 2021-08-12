@@ -2,6 +2,7 @@
 
 namespace Alekseytupichenkov\GuzzleStub\Tests\Functional;
 
+use Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException;
 use Alekseytupichenkov\GuzzleStub\Tests\Functional\Stub\TestClientStub;
 use PHPUnit\Framework\TestCase;
 
@@ -10,7 +11,7 @@ class TestClientTest extends TestCase
     /** @var TestClientStub */
     private $client;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->client = new TestClientStub();
     }
@@ -45,12 +46,11 @@ class TestClientTest extends TestCase
         $this->assertEquals($response, $this->client->getLatestHistoryResponse());
     }
 
-    /**
-     * @expectedException \Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException
-     * @expectedExceptionMessageRegExp "Can`t find suitable response for request .*"
-     */
     public function testCantFindSuitableResponseException()
     {
+        $this->expectException(GuzzleStubException::class);
+        $this->expectErrorMessageMatches('/^Can`t find suitable response for request .*/');
+
         $this->client->post('/without/fixture');
     }
 
@@ -87,12 +87,11 @@ class TestClientTest extends TestCase
         $this->assertArrayHasKey('options', $history);
     }
 
-    /**
-     * @expectedException \Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException
-     * @expectedExceptionMessage Can`t found history with index 1
-     */
     public function testCantFoundHistoryWithIndexException()
     {
+        $this->expectException(GuzzleStubException::class);
+        $this->expectExceptionMessage('Can`t found history with index 1');
+
         $this->client->getHistory(1);
     }
 }

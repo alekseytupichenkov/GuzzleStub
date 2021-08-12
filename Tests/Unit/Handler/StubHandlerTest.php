@@ -2,6 +2,7 @@
 
 namespace Alekseytupichenkov\GuzzleStub\Tests\Unit\Handler;
 
+use Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException;
 use Alekseytupichenkov\GuzzleStub\Handler\StubHandler;
 use Alekseytupichenkov\GuzzleStub\Model\Fixture;
 use GuzzleHttp\Psr7\Request;
@@ -25,7 +26,7 @@ class StubHandlerTest extends TestCase
     /** @var StubHandler */
     private $handler;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->handler = new StubHandler();
 
@@ -106,12 +107,11 @@ class StubHandlerTest extends TestCase
         $this->assertEquals($response, $promise->wait());
     }
 
-    /**
-     * @expectedException \Alekseytupichenkov\GuzzleStub\Exception\GuzzleStubException
-     * @expectedExceptionMessageRegExp "Can`t find suitable response for request .*"
-     */
     public function testException()
     {
+        $this->expectException(GuzzleStubException::class);
+        $this->expectExceptionMessageMatches('/^Can`t find suitable response for request .*/');
+
         $this->handler->__invoke(new Request('not', 'valid'), []);
     }
 }
